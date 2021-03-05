@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.jumbotron{
+    color: whitesmoke;
+    display: flex;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}

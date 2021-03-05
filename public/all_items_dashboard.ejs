@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <script lang="javaScript" type="text/javascript">
+    window.history.forward();
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="text-right">
+      <div>User :&nbsp<%=userName%></div>
+      <form action="/logout" method="post">
+        <a href="/myitems" class="btn btn-lg btn-dark">My Items</a>
+        <button class="btn btn-lg btn-danger" type="submit">Log Out</button>
+      </form>
+    </div>
+    <h3 class="text-center">All the Items Available</h3>
+    <br />
+    <table class="table alert table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Book Name</th>
+          <th>Author</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% items.forEach(function(item){ %>
+        <tr>
+          <td><%= item.itemName %></td>
+          <td><%= item.itemQuantity %></td>
+          <td><%= item.itemPrice %></td>
+          <td>
+            <a href="/view/<%= item.itemId %>" class="btn btn-sm btn-warning">View Details</a>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
